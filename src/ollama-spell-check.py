@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """
 This script uses the OLLama API to correct spelling mistakes in a text.
 """
