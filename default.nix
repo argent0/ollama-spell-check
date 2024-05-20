@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
     owner = "argent0";
     repo = "ollama-spell-check";
     rev = "main";
-    sha256 = "sha256-/4ZGNKhgSslDQ5SMV0ISpUNn9LiK7OOdQom0rXYvYYk=";
+    sha256 = "sha256-+RGFeCF0bfkTNEjSzuc7OkxO4TNl+fniG/9pB2mziyg=";
   };
 
   propagatedBuildInputs = [
