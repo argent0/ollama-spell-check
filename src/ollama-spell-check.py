@@ -68,25 +68,25 @@ def main():
     lines = sys.stdin
 
     while True:
-        part = itertools.islice(lines, 0, 5)
+        next_lines = list(itertools.islice(lines, 0, 5))
 
-        part_lines = [line.strip() for line in part if line.strip()]
-
-        if len(part_lines) == 0:
+        if not next_lines:
             break
 
         prompt = [
-                "Correct any spelling mistakes in the following text:",
+                "You are a highly intelligent spell checker and grammar assistant. Your primary goal is to identify and correct spelling errors, grammatical mistakes, and punctuation problems in text input.",
+                "Only output the corrected text. Do not include any other information in the output.",
                 ]
 
         closer = [
-                "Only output the corrected text.",
                 ]
 
-
-        corrected = client.query(prompt, closer, part_lines)
+        corrected = client.query(prompt, closer, next_lines)
 
         print(corrected)
+
+        if sys.stdin.isatty() or sys.stdin.buffer.peek():
+            break
 
 if __name__ == '__main__':
     main()
